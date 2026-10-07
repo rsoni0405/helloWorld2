@@ -7,4 +7,6 @@ app = Flask(__name__)
 def hello_world():  # put application's code here
     return 'Hello World from Rudra Soni! I am adding my first code change.'
 
-
+@app.route('/about-css')
+def about_css():
+    return render_template('about-css.html')
