@@ -1,0 +1,28 @@
+/* this will format and style the paragraphs */
+p {
+    color: #e21833;
+    font-size: 16px;
+}
+h2 {
+    color: #ffd200;
+    font-size: 24px;
+}
+/* this will format and style the table */
+table, th, td {
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: #000000;
+    border-collapse: collapse;
+}
+/* this will format the third paragraph */
+p#third-paragraph {
+    color: #7f7f7f;
+    font-weight: bold;
+}
+.highlight {
+    color: #454545;
+}
+img.logo {
+    width: 300px;
+    height: 200px;
+}
