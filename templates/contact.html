@@ -1,31 +1,16 @@
 {% extends "base.html" %}
-
-{% block page_title %}Contact Me{% endblock %}
-
-{% block page_head %}Contact Me{% endblock %}
-
+{% block page_title %}Contact Form{% endblock %}
+{% block page_head %}Contact Form{% endblock %}
 {% block page_content %}
-
 {% if submitted %}
-
-    <div class="alert alert-success">
-        <h2>Thank You!</h2>
-        <p>Thank you for contacting me! Here is the information you submitted:</p>
-
-        <p><strong>First Name:</strong> {{ first_name }}</p>
-        <p><strong>Last Name:</strong> {{ last_name }}</p>
-        <p><strong>Email Address:</strong> {{ email }}</p>
-        <p><strong>Message:</strong> {{ message }}</p>
-    </div>
-
-    <a href="{{ url_for('contact') }}" class="btn btn-primary">
-        Submit Another Response
-    </a>
-
+    <h2>Thank You!</h2>
+    <p>Thank you for submitting the contact form.</p>
+    <p>First Name: {{ first_name }}</p>
+    <p>Last Name: {{ last_name }}</p>
+    <p>Email Address: {{ email }}</p>
+    <p>Message: {{ message }}</p>
 {% else %}
-
     <form method="POST" action="{{ url_for('contact') }}">
-
         <div class="mb-3">
             <label for="first_name" class="form-label">First Name</label>
             <input type="text" class="form-control" id="first_name"
@@ -51,9 +36,6 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
-
     </form>
-
 {% endif %}
-
 {% endblock %}

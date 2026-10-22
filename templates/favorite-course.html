@@ -6,20 +6,10 @@
 
 {% block page_content %}
 
-{% if subject and course_number %}
-
-    <div class="alert alert-success">
-        You entered your favorite course as:
-        {{ subject }}{{ course_number }}
-    </div>
-
-{% else %}
-
-    <div class="alert alert-info">
-        Please enter your favorite course using the URL parameters.
-    </div>
-
-{% endif %}
+    {% if subject and course_number %}
+        <p>You entered your favorite course as: {{ subject }}{{ course_number }}</p>
+    {% else %}
+        <p>Please enter your favorite course using the URL parameters.</p>
+    {% endif %}
 
 {% endblock %}
-
