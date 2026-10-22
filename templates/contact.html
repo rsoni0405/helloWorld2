@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block page_title %}Contact Me{% endblock %}
+
+{% block page_head %}Contact Me{% endblock %}
+
+{% block page_content %}
+
+{% if submitted %}
+
+    <div class="alert alert-success">
+        <h2>Thank You!</h2>
+        <p>Thank you for contacting me! Here is the information you submitted:</p>
+
+        <p><strong>First Name:</strong> {{ first_name }}</p>
+        <p><strong>Last Name:</strong> {{ last_name }}</p>
+        <p><strong>Email Address:</strong> {{ email }}</p>
+        <p><strong>Message:</strong> {{ message }}</p>
+    </div>
+
+    <a href="{{ url_for('contact') }}" class="btn btn-primary">
+        Submit Another Response
+    </a>
+
+{% else %}
+
+    <form method="POST" action="{{ url_for('contact') }}">
+
+        <div class="mb-3">
+            <label for="first_name" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="first_name"
+                   name="first_name" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="last_name" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="last_name"
+                   name="last_name" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email"
+                   name="email" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message"
+                      name="message" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+
+{% endif %}
+
+{% endblock %}
